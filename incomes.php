@@ -21,7 +21,7 @@
 
             <div>
                 <label for="description" class="block text-sm font-medium text-gray-700 mb-1">Income Source</label>
-                <input type="text" name="description" id="description" placeholder="e.g., Salary, Freelance..." required
+                <input type="text" name="income_Source" id="income_Source" placeholder="e.g., Salary, Freelance..." required
                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition">
             </div>
 
@@ -62,4 +62,20 @@
 </html>
 <?php
 
+
+  if (isset($_POST["submit"])) {
+        include "config/DB.php";
+        $income_Source = $_POST["income_Source"];
+        $date_Received = $_POST["date"];
+        $description = $_POST["description"];
+        $amount = $_POST["amount"];
+
+        $sql = "INSERT INTO income (Income_Source,amount,description,date) VALUES('$income_Source',$amount,'$description','$date_Received')";
+        $conn->query($sql);
+        if ($conn->error) {
+        echo "Error inserting record: " . $conn->error;
+    } 
+}
+
+     
 ?>
