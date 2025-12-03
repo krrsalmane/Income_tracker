@@ -17,7 +17,7 @@
             <span class="text-green-500">📈</span> Add Income
         </h2>
 
-        <form action="add_income.php" method="POST" class="space-y-4">
+        <form action="add_income.php" method="post" class="space-y-4">
 
             <div>
                 <label for="description" class="block text-sm font-medium text-gray-700 mb-1">Income Source</label>
@@ -60,22 +60,3 @@
 </body>
 
 </html>
-<?php
-
-
-  if (isset($_POST["submit"])) {
-        include "config/DB.php";
-        $income_Source = $_POST["income_Source"];
-        $date_Received = $_POST["date"];
-        $description = $_POST["description"];
-        $amount = $_POST["amount"];
-
-        $sql = "INSERT INTO income (Income_Source,amount,description,date) VALUES('$income_Source',$amount,'$description','$date_Received')";
-        $conn->query($sql);
-        if ($conn->error) {
-        echo "Error inserting record: " . $conn->error;
-    } 
-}
-
-     
-?>

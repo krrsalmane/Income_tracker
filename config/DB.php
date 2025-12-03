@@ -1,17 +1,14 @@
+
 <?php
-
-$db_server= "localhost";
+$db_server = "localhost";
 $db_user = "root";
-$db_password="root@123";
+$db_password = "root@123";
 $db_name = "smartWallet";
- try{
 
-$conn = mysqli_connect($db_server,$db_user,$db_password,$db_name);
- }
+$conn = mysqli_connect($db_server, $db_user, $db_password, $db_name);
 
- catch(mysqli_sql_exception){
-
-    echo "could not connect";
- }
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
 
 ?>
