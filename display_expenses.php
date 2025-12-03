@@ -38,7 +38,7 @@ if($conn){
             <h1 class="text-3xl font-extrabold text-gray-900 flex items-center gap-2">
                 <span class="text-red-600">💸</span> Expense History
             </h1>
-            <a href="add_expense.php" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition duration-200 shadow-md">
+            <a href="expenses.php" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition duration-200 shadow-md">
                 + Add New Expense
             </a>
         </div>
@@ -59,16 +59,14 @@ if($conn){
                 <tbody class="bg-white divide-y divide-gray-100">
 
                     <?php
-                    // Display loop for expenses
                     if ($row_count > 0) {
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            // Note the use of Expense_Category and red text for the amount
+                        while ($row = mysqli_fetch_assoc($spent)) {
                             echo "
                                 <tr>
-                                    <td class='px-6 py-4 whitespace-nowrap text-sm text-gray-700'>" . htmlspecialchars($row['Expense_Category']) . "</td>
+                                    <td class='px-6 py-4 whitespace-nowrap text-sm text-gray-700'>" . htmlspecialchars($row['categorie']) . "</td>
                                     <td class='px-6 py-4 whitespace-nowrap text-sm font-bold text-right text-red-600'>$" . number_format($row['amount'], 2) . "</td>
                                     <td class='px-6 py-4 text-sm text-gray-500 max-w-xs truncate'>" . htmlspecialchars($row['description']) . "</td>
-                                    <td class='px-6 py-4 whitespace-nowrap text-sm text-gray-700'>" . date('Y-m-d', strtotime($row['date'])) . "</td>
+                                    <td class='px-6 py-4 whitespace-nowrap text-sm text-gray-700'>" . date('Y-m-d', strtotime($row['my_date'])) . "</td>
                                     <td class='px-6 py-4 whitespace-nowrap text-center text-sm font-medium'>
                                         <a href='edit.php?id={$row['id']}' class='text-blue-600 hover:text-blue-900 transition duration-150 mr-3'>Edit</a>
                                         <span class='text-gray-300'>|</span>
