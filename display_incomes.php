@@ -61,9 +61,9 @@ if ($conn) {
                                 <td class="px-6 py-4 text-sm text-gray-500 max-w-xs truncate"><?= htmlspecialchars($row['description']) ?></td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><?= date('Y-m-d', strtotime($row['my_date'])) ?></td>
                                 <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
-                                    <a href="edit.php?id=<?= $row['id'] ?>" class="text-blue-600 hover:text-blue-900 transition duration-150 mr-3">Edit</a>
+                                    <a href="edit.php?id=<?= $row['id'] ?>  " class="text-blue-600 hover:text-blue-900 transition duration-150 mr-3">Edit</a>
                                     <span class="text-gray-300">|</span>
-                                    <a href="delete.php?id=<?= $row['id'] ?>" class="text-red-600 hover:text-red-900 transition duration-150 ml-3">Delete</a>
+                                    <a href="delete.php?id=<?= $row['id'] ?>  " class="text-red-600 hover:text-red-900 transition duration-150 ml-3">Delete</a>
                                 </td>
                             </tr>
                         <?php endwhile; ?>
