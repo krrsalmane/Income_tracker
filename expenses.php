@@ -16,7 +16,7 @@
             <span class="text-red-500">📉</span> Add Expense
         </h2>
 
-        <form action="add_expense.php" method="POST" class="space-y-4">
+        <form action="add_expenses.php" method="POST" class="space-y-4">
 
             <div>
                 <label for="amount" class="block text-sm font-medium text-gray-700 mb-1">Amount</label>
@@ -65,6 +65,3 @@
 </body>
 
 </html>
-<?php
-
-?>

@@ -44,7 +44,6 @@ if ($conn) {
             <table class="min-w-full divide-y divide-gray-200">
                 <thead class="bg-green-50">
                     <tr>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider w-16">ID</th>
                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">Source</th>
                         <th class="px-6 py-3 text-right text-xs font-medium text-gray-600 uppercase tracking-wider">Amount</th>
                         <th class="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">Description</th>
@@ -57,7 +56,6 @@ if ($conn) {
                     <?php if ($row_count > 0): ?>
                         <?php while ($row = mysqli_fetch_assoc($result)): ?>
                             <tr>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><?= $row['id'] ?></td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><?= htmlspecialchars($row['Income_Source']) ?></td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-right text-green-600">$<?= number_format($row['amount'], 2) ?></td>
                                 <td class="px-6 py-4 text-sm text-gray-500 max-w-xs truncate"><?= htmlspecialchars($row['description']) ?></td>
