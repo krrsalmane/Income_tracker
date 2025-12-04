@@ -60,25 +60,25 @@ if($conn){
 
                     <?php
                     if ($row_count > 0) {
-                        while ($row = mysqli_fetch_assoc($spent)) {
-                            echo "
+                        while ($row = mysqli_fetch_assoc($spent)) {?>
+                           
                                 <tr>
-                                    <td class='px-6 py-4 whitespace-nowrap text-sm text-gray-700'>" . htmlspecialchars($row['categorie']) . "</td>
-                                    <td class='px-6 py-4 whitespace-nowrap text-sm font-bold text-right text-red-600'>$" . number_format($row['amount'], 2) . "</td>
-                                    <td class='px-6 py-4 text-sm text-gray-500 max-w-xs truncate'>" . htmlspecialchars($row['description']) . "</td>
-                                    <td class='px-6 py-4 whitespace-nowrap text-sm text-gray-700'>" . date('Y-m-d', strtotime($row['my_date'])) . "</td>
+                                    <td class='px-6 py-4 whitespace-nowrap text-sm text-gray-700'><?php echo htmlspecialchars($row['categorie']) ?></td>
+                                    <td class='px-6 py-4 whitespace-nowrap text-sm font-bold text-right text-red-600'><?php echo number_format($row['amount'], 2) ?></td>
+                                    <td class='px-6 py-4 text-sm text-gray-500 max-w-xs truncate'><?php echo htmlspecialchars($row['description']) ?>/td>
+                                    <td class='px-6 py-4 whitespace-nowrap text-sm text-gray-700'><?php echo date('Y-m-d', strtotime($row['my_date'])) ?></td>
                                     <td class='px-6 py-4 whitespace-nowrap text-center text-sm font-medium'>
-                                        <a href='edit.php?id={$row['id']}' class='text-blue-600 hover:text-blue-900 transition duration-150 mr-3'>Edit</a>
+                                        <a  class='text-blue-600 hover:text-blue-900 transition duration-150 mr-3'>Edit</a>
                                         <span class='text-gray-300'>|</span>
-                                        <a href='delete.php?id={$row['id']}' class='text-red-600 hover:text-red-900 transition duration-150 ml-3'>Delete</a>
+                                        <a href="delete_expenses.php?id=<?= $row['id'] ?>" class='text-red-600 hover:text-red-900 transition duration-150 ml-3'>Delete</a>
                                     </td>
                                 </tr>
-                            ";
-                        }
-                    } else {
-                        echo '<tr><td colspan="6" class="px-6 py-4 text-center text-gray-500 py-10">No expense records found.</td></tr>';
-                    }
-                    ?>
+                           
+                       <?php }
+                    } else { ?>
+                        <tr><td colspan="6" class="px-6 py-4 text-center text-gray-500 py-10">No expense records found.</td></tr>
+                  <?php  }?>
+                    
                 </tbody>
             </table>
         </div>
