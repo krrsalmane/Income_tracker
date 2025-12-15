@@ -21,11 +21,18 @@ if (isset($_POST["update"])) {
 
     mysqli_query($conn, "UPDATE income SET Income_Source='$income_Source',description='$description', my_date='$date_Received', amount='$amount' WHERE id=$id");
 
-    header("Location: display_incomes.php");
+    header("Location: index.php");
 }
 
 ?>
 <script src="https://cdn.tailwindcss.com"></script>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+ <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md border-t-4 border-green-500">
+
+        <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+            <span class="text-green-500">📈</span> Add Income
+        </h2>
 
  <form  method="post" class="space-y-4">
 
@@ -66,3 +73,5 @@ if (isset($_POST["update"])) {
             </div>
 
         </form>
+ </div>
+</body>

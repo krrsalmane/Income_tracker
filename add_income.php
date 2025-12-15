@@ -17,7 +17,7 @@ if (isset($_POST["submit"])) {
     $stmt->bind_param("sdss", $income_Source, $amount, $description, $date_Received);
 
     if ($stmt->execute()) {
-        header ("location: display_incomes.php");
+        header ("location: index.php");
     } else {
         echo "Error inserting record: " . $stmt->error;
     }

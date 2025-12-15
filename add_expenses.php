@@ -19,7 +19,7 @@ if (isset($_POST["submit"])) {
     $exp->bind_param( "dsss" ,$amount, $description,$categorie, $date_Received);
 
     if ($exp->execute()) {
-        header ("location: display_expenses.php");
+        header ("location: index.php");
     } else {
         echo "Error inserting record: " . $exp->error;
     }
