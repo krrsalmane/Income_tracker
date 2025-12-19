@@ -12,14 +12,14 @@ try {
     $mail->isSMTP();
     $mail->Host       = 'smtp.gmail.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'karroumsalmane@gmail.com';   // 🔴 CHANGE
-    $mail->Password   = 'mbmfpappfmttwpct';      // 🔴 CHANGE
+    $mail->Username   = 'karroumsalmane@gmail.com';   
+    $mail->Password   = 'mbmfpappfmttwpct';     
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port       = 587;
 
     // 📩 Email info
     $mail->setFrom('karroumsalmane@gmail.com', 'Income Management');
-    $mail->addAddress('karroumsalmane@gmail.com'); // 🔴 CHANGE
+    $mail->addAddress('karroumsalmane@gmail.com'); 
 
     // ✉️ Content
     $mail->isHTML(true);

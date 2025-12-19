@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 include "../config/DB.php";
 
 $error = "";
@@ -135,4 +135,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
         </div>
     </div>
 </body>
-</html> -->
+</html>
